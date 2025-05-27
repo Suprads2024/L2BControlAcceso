@@ -1,0 +1,149 @@
+/* Contenedor principal del contacto */
+.contact-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo semitransparente */
+  background-image: url('../images/l2b/L2B_\ Fondo\ header.jpg'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  }
+  
+  /* Contenedor del formulario de contacto */
+  .contact-container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Título del formulario */
+  .contact-container h1 {
+    font-family: 'Eurostile-Heavy';
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #243466; /* Color del título */
+  }
+  
+  /* Estilos generales para el formulario */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form label {
+    font-family: 'Eurostile-Medium';
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    width: 100%;
+    color: rgb(0, 0, 0);
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+  }
+  /* Estilo para los campos completados (válidos) */
+.contact-form input:valid,
+.contact-form textarea:valid {
+  background-color: #e8f5e9; /* Fondo verde claro al llenar */
+  border-color: #43a047; /* Borde verde */
+}
+
+/* Estilo para los campos que no han sido completados o están vacíos */
+.contact-form input,
+.contact-form textarea {
+  background-color: #fff;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+/* Estilo del botón Enviar */
+.submit-button {
+  margin-top: 20px;
+  font-family: 'Eurostile-Heavy';
+  background-color: #43a047;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: auto; /* Ajusta el ancho según el contenido */
+  display: inline-block; /* Asegura que no ocupe el ancho del contenedor */
+}
+
+/* Efecto de tecla presionada en hover */
+.submit-button:hover {
+  background-color: #36a139;
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+
+  /* Mensajes de éxito y error (inicialmente ocultos) */
+  .success-message, .error-message {
+    display: none;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .success-message {
+    color: #00cc66;
+  }
+  
+  .error-message {
+    color: #ff6666;
+  }
+  /* Estilo cuando los campos obligatorios están completos y son válidos */
+input:valid, textarea:valid {
+    border-color: #ff6600; /* Cambia el borde a naranja cuando está completo */
+  }
+  
+
+  @media (max-width: 768px) {
+    /* Ajustes para la versión móvil */
+    .contact-page {
+      padding: 40px 20px; /* Más espacio superior e inferior */
+    }
+  
+    .contact-container {
+      padding: 30px 20px; /* Reducir padding lateral */
+    
+    }
+  
+    /* Estilo del título en móvil */
+    .contact-container h1 {
+      font-size: 24px; /* Reduce un poco el tamaño para móviles */
+    }
+  
+    /* Ajuste de los campos de formulario en móvil */
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 14px; /* Fuente más pequeña para dispositivos móviles */
+    }
+  
+    /* Botón en versión móvil */
+    .submit-button {
+      font-size: 16px; /* Botón ligeramente más pequeño */
+      padding: 10px;
+    }
+  }
+  

@@ -1,0 +1,869 @@
+/* Header section */
+
+
+/* Contenedor principal que organiza el carrusel y la sección debajo */
+.main-container {
+
+    margin: 0 auto;
+    /* Centrar todo el contenido */
+    gap: 10px;
+    /* Separación entre módulos si usas flex o grid */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    /* Ocupa todo el alto de la pantalla */
+
+}
+.main-container2{
+    margin-bottom: 100px;
+}
+/* carousel */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    /* Ancho total */
+    height: 60vh;
+    /* 60% de la altura de la pantalla */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    
+}
+
+.carousel .list .item {
+    
+    width: 220px;
+    /* Reducimos el ancho */
+    height: 160px;
+    /* Reducimos la altura */
+    position: absolute;
+    top: 80%;
+    transform: translateY(-70%);
+    left: 80%;
+
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    background-position: left center;
+    /* Ajustamos para enfocar el producto */
+    background-size: cover;
+    z-index: 100;
+    transition: 1s;
+ 
+
+}
+
+.item1 {
+    background-image: url('../images/l2b/CarruselL2B_Supreme.png');
+}
+
+.item2 {
+    background-image: url('../images/l2b/CarruselL2B_hypanelf.png');
+}
+
+.item3 {
+    background-image: url('../images/l2b/CarruselL2B_Lite.png');
+}
+
+.item4 {
+    background-image: url('../images/l2b/CarruselL2B_Lux.png');
+}
+
+.item5 {
+    background-image: url('../images/l2b/CarruselL2B_Pro.png');
+}
+
+.item6 {
+    background-image: url('../images/l2b/CarruselL2B_Ultra.png');
+}
+
+
+.carousel .list .item:nth-child(1),
+.carousel .list .item:nth-child(2) {
+    
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel .list .item:nth-child(3) {
+    left: 57%; /* Primer elemento más a la izquierda */
+}
+
+.carousel .list .item:nth-child(4) {
+    left: calc(57% + 250px); /* Segundo elemento separado por 250px */
+}
+
+.carousel .list .item:nth-child(5) {
+    left: calc(57% + 500px); /* Tercer elemento separado por 500px */
+}
+
+/* Ocultamos el cuarto elemento (y los siguientes, si los hubiera) */
+.carousel .list .item:nth-child(n+6) {
+    left: calc(57% + 750px); /* Posición fuera del área visible */
+    opacity: 0; /* Lo ocultamos visualmente */
+    pointer-events: none; /* Evitamos que sea interactivo */
+}
+
+
+
+@media (max-width:1700px) {
+
+
+    .carousel .list .item {
+        width: 120px;
+        /* Reducimos el ancho */
+        height: 80px;
+        /* Reducimos la altura */
+        position: absolute;
+        top: 80%;
+        transform: translateY(-70%);
+        left: 80%;
+        border-radius: 20px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        background-position: left center;
+        /* Ajustamos para enfocar el producto */
+        background-size: cover;
+        z-index: 100;
+        transition: 1s;
+    }
+
+    .carousel .list .item:nth-child(1),
+    .carousel .list .item:nth-child(2) {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .carousel .list .item:nth-child(3) {
+        left: 47%;
+    }
+
+    .carousel .list .item:nth-child(n+4) {
+        left: calc(47% + 200px);
+    }
+
+    .carousel .list .item:nth-child(5) {
+        left: calc(47% + 400px);
+    }
+
+    .carousel .list .item:nth-child(6) {
+        left: calc(47% + 600px);
+    }
+
+    .carousel .list .item:nth-child(n+7) {
+        left: calc(47% + 800px);
+        opacity: 0;
+    }
+
+
+}
+
+
+.list .item .content {
+    position: absolute;
+
+    top: 40%;
+    left: 700px;
+    transform: translateY(-50%);
+    width: 400px;
+    text-align: left;
+    color: #525252ff;
+    display: none;
+}
+
+.list .item:nth-child(2) .content {
+    display: block;
+}
+
+.content .title {
+    font-size: 2.5rem;
+    font-family: 'Eurostile-Heavy';
+    color: #525252ff;
+    font-weight: bold;
+    line-height: 1;
+
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+
+.content .name {
+    font-size: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 3px 4px 4px rgba(255, 255, 255, 0.8);
+
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+.content .des {
+    width:600px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-left: 0px;
+    font-family: 'Eurostile-Regular';
+    opacity: 0;
+    
+    animation: animate 1s ease-in-out 0.9s 1 forwards;
+}
+
+.content .btn {
+    margin-left: 5px;
+
+    opacity: 0;
+    animation: animate 1s ease-in-out 1.2s 1 forwards;
+}
+
+.content .btn button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border: 2px solid #fff;
+}
+
+.content .btn button:nth-child(1) {
+    margin-right: 15px;
+}
+
+.content .btn button:nth-child(2) {
+    background: transparent;
+
+    border: 2px solid #fff;
+    transition: 0.3s;
+}
+
+.content .btn button:nth-child(2):hover {
+    background-color: #535353cb;
+    color: #fff;
+    border-color: #414141cb;
+}
+
+
+@keyframes animate {
+
+    from {
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+/* Carousel */
+
+
+
+
+
+
+/* next prev arrows */
+/* Estilos de los botones de navegación */
+
+.arrows {
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.arrows .prev {
+    width: 45px;
+    /* Tamaño más pequeño */
+    height: 45px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    /* Fondo blanco */
+    color: #000;
+    /* Color de texto negro */
+    border: 2px solid #dcdcdc;
+    /* Borde gris claro */
+    outline: none;
+    font-size: 18px;
+    /* Texto más pequeño */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    /* Para posicionarlas en la página */
+    left: -180px;
+    /* Moverlas hacia la izquierda */
+    bottom: -50px;
+    /* Moverlas hacia abajo */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    /* Sombra más pronunciada */
+    transition: all 0.3s ease;
+    /* Transición suave para hover */
+}
+
+.arrows .prev:hover {
+    background-color: #e6e6e6;
+    /* Fondo gris claro en hover */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    /* Más sombra en hover */
+}
+
+/* Ajustes similares para el botón "next" */
+.arrows .next {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #000;
+    border: 2px solid #dcdcdc;
+    outline: none;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    right: 380px;
+    bottom: -50px;
+    /* Moverlas hacia abajo */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    /* Sombra más pronunciada */
+    transition: all 0.3s ease;
+}
+
+.arrows .next:hover {
+    background-color: #e6e6e6;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    /* Más sombra en hover */
+}
+
+
+
+
+/* time running */
+.carousel .timeRunning {
+    position: absolute;
+    z-index: 500;
+    width: 0%;
+    height: 4px;
+    background-color: #ff6e14da;
+    left: 0;
+    top: 0;
+    animation: runningTime 7s linear 1 forwards;
+}
+
+@keyframes runningTime {
+
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 999px) {
+
+
+    .list .item .content {
+        left: 50px;
+    }
+
+    .content .title,
+    .content .name {
+        font-size: 70px;
+    }
+
+    .content .des {
+        font-size: 0.9rem;
+      
+    }
+
+}
+
+@media screen and (max-width: 690px) {
+    header nav a {
+        font-size: 14px;
+        margin-right: 0;
+    }
+
+    
+
+    .content .title,
+    .content .name {
+        font-size: 1.8rem;
+    }
+
+    .content .btn button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    .main-container2{
+    margin-bottom: 30px;
+}
+}
+
+/* Espaciado vertical entre secciones */
+.carousel {
+    margin-bottom: 10px;
+    /* Espacio entre módulos */
+}
+
+
+/* Contenedor principal */
+.info-section {
+    position: relative;
+    width: 100%;
+    /* Ancho completo de la pantalla */
+    height: 40vh;
+    /* Altura de la sección */
+    overflow: hidden;
+    margin-bottom: 10px;
+    /* Espacio entre módulos */
+}
+
+/* Imagen de fondo */
+.info-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/Assets_Akubela/Unidad1/Ecos/1876\ x\ 370_Ecosistema1.png');
+    /* Ruta de la imagen */
+    background-size: cover;
+    /* La imagen cubrirá todo el contenedor */
+    background-position: center;
+    /* Centrado de la imagen */
+    border-radius: 15px;
+}
+
+/* Texto sobre la imagen, alineado a la derecha */
+.info-text {
+    position: absolute;
+    /* Posición absoluta dentro de .info-image */
+    top: 50%;
+    /* Centrado vertical */
+    right: 200px;
+    /* Separación del borde derecho */
+    transform: translateY(-50%);
+    /* Ajuste para centrar perfectamente */
+    width: 700px;
+    /* Ancho máximo del texto */
+    color: #fff;
+    /* Texto blanco para contraste */
+
+    padding: 20px;
+    border-radius: 8px;
+    /* Bordes redondeados */
+
+}
+
+/* Estilo del título */
+.info-text h2 {
+    text-transform: uppercase;
+    font-family: 'Eurostile-Bold';
+    font-size: 2.0rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilo del párrafo */
+.info-text p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-family: 'Eurostile-Regular';
+    color: #858484;
+    /* Texto blanco para contraste */
+}
+
+
+@media (max-width:1700px) {
+    .list .item .content {
+        position: absolute;
+
+        top: 45%;
+        left: 500px;
+        transform: translateY(-50%);
+        width: 400px;
+        text-align: left;
+        color: #525252ff;
+        display: none;
+    }
+    .content .des {
+       
+        font-size: 1.1rem;
+       
+    }
+
+    /* Texto sobre la imagen, alineado a la derecha */
+    .info-text {
+        position: absolute;
+        /* Posición absoluta dentro de .info-image */
+        top: 50%;
+        /* Centrado vertical */
+        right: 70px;
+        /* Separación del borde derecho */
+        transform: translateY(-50%);
+        /* Ajuste para centrar perfectamente */
+        width: 600px;
+        /* Ancho máximo del texto */
+        color: #fff;
+        /* Texto blanco para contraste */
+
+        padding: 20px;
+        border-radius: 8px;
+        /* Bordes redondeados */
+
+    }
+
+}
+
+
+@media (max-width:1681px) {
+    .list .item .content {
+        position: absolute;
+
+        top: 45%;
+        left:600px;
+        transform: translateY(-50%);
+        width: 400px;
+        text-align: left;
+        color: #525252ff;
+        display: none;
+    }}
+@media (max-width:786px) {
+    
+
+
+    .carousel .list .item:nth-child(1),
+    .carousel .list .item:nth-child(2) {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .carousel .list .item:nth-child(3) {
+        left: 57%;
+    }
+    
+    .carousel .list .item:nth-child(n+4) {
+        left: calc(57% + 200px);
+    }
+    
+    .carousel .list .item:nth-child(5) {
+        left: calc(57% + 400px);
+    }
+    
+    .carousel .list .item:nth-child(6) {
+        left: calc(57% + 600px);
+    }
+    
+
+    .list .item .content {
+        position: absolute;
+
+        top: 30%;
+        left: 20px;
+        transform: translateY(-50%);
+        width: 400px;
+        text-align: left;
+        color: #525252ff;
+        display: none;
+    }
+
+    .arrows {
+        position: absolute;
+        top: 80%;
+        right: 52%;
+        z-index: 100;
+        width: 300px;
+        max-width: 30%;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .arrows .prev {
+        width: 40px;
+        /* Tamaño más pequeño */
+        height: 40px;
+
+        left: 0px;
+        /* Moverlas hacia la izquierda */
+        bottom: -70px;
+        /* Moverlas hacia abajo */
+
+    }
+
+    .arrows .prev:hover {
+        background-color: #e6e6e6;
+        /* Fondo gris claro en hover */
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+        /* Más sombra en hover */
+    }
+
+    /* Ajustes similares para el botón "next" */
+    .arrows .next {
+        width: 40px;
+        /* Tamaño más pequeño */
+        height: 40px;
+
+        right: 10px;
+        bottom: -70px;
+        /* Moverlas hacia abajo */
+
+    }
+
+    .arrows .next:hover {
+        background-color: #e6e6e6;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+        /* Más sombra en hover */
+    }
+
+
+
+    /* Estilo del título */
+    .info-text h2 {
+        text-transform: uppercase;
+        font-family: 'Eurostile-Bold';
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .info-text {
+        position: absolute;
+        /* Posición absoluta dentro de .info-image */
+        bottom: 15%;
+        /* Separación inferior relativa al tamaño de la imagen */
+        left: 5%;
+        /* Separación izquierda relativa al tamaño del contenedor */
+        transform: translateY(0);
+        /* Elimina transformaciones innecesarias */
+        width: 90%;
+        /* Ajustamos el ancho relativo al contenedor */
+        color: #fff;
+        /* Texto blanco para contraste */
+        padding: 10px;
+        /* Espaciado interno */
+
+        border-radius: 8px;
+        /* Bordes redondeados */
+        text-align: left;
+        /* Centrado del texto */
+    }
+
+    /* Contenedor principal */
+    .info-section {
+
+        height: 67vh;
+        /* Altura de la sección */
+
+    }
+
+    /* Imagen de fondo */
+    .info-image {
+        width: 100%;
+        height: 100%;
+        background-image: url('../assets/Assets_Akubela/Unidad1/Ecos/Responsive_Ecosistema.png');
+        /* Ruta de la imagen */
+        background-size: cover;
+        /* La imagen cubrirá todo el contenedor */
+        background-position: center;
+        /* Centrado de la imagen */
+        border-radius: 15px;
+    }
+}
+
+
+/* Estilos comunes para todos los elementos */
+.item {
+    width: 220px;
+    height: 160px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+}
+
+/* Quitar el padding específicamente del footer */
+footer {
+    margin-left: -10px; /* Compensa el padding del body */
+    margin-right: -10px; /* Compensa el padding del body */
+    width: calc(100% + 20px); /* Ajusta el ancho para cubrir toda la pantalla */
+    box-sizing: border-box; /* Asegura que el tamaño del footer sea consistente */
+}
+/* Cambiar las imágenes para pantallas móviles */
+@media (max-width: 768px) {
+    .content .des {
+        font-size: 1rem;
+        width: 300px;
+        line-height: 1.2;
+    }
+    .carousel {
+        width: 100%; /* Ancho total */
+        height: auto; /* Ajuste automático según el contenido */
+        display: flex; /* Centrado del contenido */
+        align-items: center; 
+        justify-content: center; 
+        min-height: 570px; /* Altura mínima para asegurarnos de que el carrusel siempre sea visible */
+    }
+    .carousel .list .item {
+        width: 120px; /* Mantén el ancho */
+        height: 80px; /* Mantén la altura */
+        position: absolute;
+        top: 92%; /* Posición vertical */
+        transform: translateY(-70%);
+        left: 80%;
+    
+        /* Ajustes para centrar más el producto */
+        background-position: center 77%; /* Centra horizontalmente y mueve ligeramente hacia arriba */
+        background-size: cover; /* Ajusta para cubrir todo el contenedor */
+        z-index: 100;
+    
+    }
+    
+    /* Estilos por defecto celular */
+    .item1 {
+        background-image: url('../images/l2b/carrouselresponsive/Carrusel-L2B-v1-Responsive_0003_Supreme.png');
+    }
+
+    .item2 {
+        background-image: url('../images/l2b/carrouselresponsive/Carrusel-L2B-v1-Responsive_0001_hy\ panel.png');
+    }
+
+    .item3 {
+        background-image: url('../images/l2b/carrouselresponsive/Carrusel-L2B-v1-Responsive_0000_Hypanel-lite.png');
+    }
+
+    .item4 {
+        background-image: url('../images/l2b/carrouselresponsive/Carrusel-L2B-v1-Responsive_0005_Lux.png');
+    }
+
+    .item5 {
+        background-image: url('../images/l2b/carrouselresponsive/Carrusel-L2B-v1-Responsive_0004_Pro.png');
+    }
+
+    .item6 {
+        background-image: url('../images/l2b/carrouselresponsive/Carrusel-L2B-v1-Responsive_0002_Ultra.png');
+    }
+
+
+
+    .item {
+        width: 150px;
+        /* Tamaño reducido en móvil */
+        height: 100px;
+        /* Tamaño reducido en móvil */
+    }
+}
+
+
+@media (max-width: 431px) {
+    .carousel {
+        
+        min-height: 650px; /* Altura mínima para asegurarnos de que el carrusel siempre sea visible */
+    }
+    .info-section {
+        height: 52vh;
+    }
+}
+@media (max-width: 421px) {
+    .carousel {
+      
+        min-height: 600px; /* Altura mínima para asegurarnos de que el carrusel siempre sea visible */
+    }
+    .info-section {
+        height: 56vh;
+    }
+
+}
+@media (max-width: 415px) {
+    .carousel {
+      
+        min-height: 600px; /* Altura mínima para asegurarnos de que el carrusel siempre sea visible */
+    }
+    .info-section {
+        height: 62vh;
+    }
+    .info-text {
+        
+        top: 55%;
+      
+    }
+
+}
+@media (max-width: 391px) {
+    .carousel {
+       
+        min-height: 580px; /* Altura mínima para asegurarnos de que el carrusel siempre sea visible */
+    }
+  /* Imagen de fondo */
+  .info-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/Assets_Akubela/Unidad1/Ecos/Responsive_Ecosistema.png');
+    /* Ruta de la imagen */
+    background-size: cover;
+    /* La imagen cubrirá todo el contenedor */
+    background-position: center;
+    /* Centrado de la imagen */
+    border-radius: 15px;
+}
+}
+
+@media (max-width: 376px) {
+    .carousel {
+       
+        min-height: 560px; /* Altura mínima para asegurarnos de que el carrusel siempre sea visible */
+    }
+      
+      .info-section {
+        height: 65vh;
+    }
+    .info-text {
+        
+        top: 50%;
+      
+    }
+
+}
+
+@media (max-width: 373px) {
+   
+      .info-section {
+        height: 80vh;
+    }
+
+
+}

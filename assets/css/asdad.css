@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Eurostile-Bold';
+  src: url('../images/Font/Eurostile\ -\ Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Eurostile-Heavy';
+  src: url('../images/Font/Eurostile\ -\ Hea.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'Eurostile-Medium';
+  src: url('../images/Font/Eurostile\ -\ Med.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Eurostile-Regular';
+  src: url('../images/Font/Eurostile\ -\ Regular.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  
+}
