@@ -4366,6 +4366,12 @@ input.main-search-input::placeholder {
   .header-right .theme-btn {
     display: none;
   }
+  .theme-btn { 
+    margin-top: 30px;
+  }
+  .offcanvas__logo a img{
+    width: 100px!important;
+  }
 }
 .header-right .search-icon {
   color: var(--text);
@@ -5858,18 +5864,17 @@ input.main-search-input::placeholder {
   cursor: pointer;
 }
 
+
 @media (max-width: 767px) {
   .intro-wrapper.style1 .intro-thumb {
    padding-top: 20px;
-    margin-bottom: 300px;
+    margin-bottom: 150px;
   }
-}
-.intro-wrapper.style1 .intro-thumb .main-thumb {
-  position: relative;
-  z-index: 3;
-}
-@media (max-width: 767px) {
-  .intro-wrapper.style1 .intro-thumb .main-thumb {
+
+  .phone-image{
+    margin-top: -55px;
+  }
+ .intro-wrapper.style1 .intro-thumb .main-thumb {
     max-width: 100%;
   }
   .phone-images-container {
@@ -5877,7 +5882,27 @@ margin-top: 20px;
   max-width: 200px;
 } 
 
+.theme-btn{
+  margin-bottom: 100px;
 }
+  .intro-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .intro-content .btn-wrapper {
+    order: 2; /* lo manda al final */
+  }
+
+  .intro-content .smart-access-box {
+    order: 0;
+  }
+}
+.intro-wrapper.style1 .intro-thumb .main-thumb {
+  position: relative;
+  z-index: 3;
+}
+
 .intro-wrapper.style1 .intro-thumb .thumbShape1 {
   position: absolute;
   top: 180px;

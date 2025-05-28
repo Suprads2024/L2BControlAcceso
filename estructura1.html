@@ -1,0 +1,76 @@
+ <div class="row">
+        <div class="col-xl-7 order-2 order-xl-1">
+            <div class="intro-content">
+                <div class="intro-section-title">
+                    <div class="intro-subtitle">¡Sin abono y sin licencia!</div>
+                    <h1 class="intro-title">Portería Inteligente</h1>
+                    <p class="intro-desc">
+                        Digitalizamos y Simplificamos los Accesos. Los hacemos más <br>
+                        seguros, ágiles y adaptados al estilo de vida actual.
+                    </p>
+                </div>
+                <div class="smart-access-box">
+                    <h6>Smart Access</h6>
+                    <div class="smart-access-columns">
+                        <ul class="smart-access-list">
+                            <li data-target="img-facial">
+                                <img src="assets/images/l2b/icons/icon_escaneo-facial.png" alt="Icono 1">
+                                Ingreso con reconocimiento facial
+                            </li>
+                            <li data-target="img-puertas">
+                                <img src="assets/images/l2b/icons/icon_puerta-inteligente.png" alt="Icono 2">
+                                Gestiona múltiples puertas
+                            </li>
+                        </ul>
+                        <ul class="smart-access-list">
+                            <li data-target="img-voz">
+                                <img src="assets/images/l2b/icons/icon_comando-de-voz.png" alt="Icono 3">
+                                Apertura por comando de voz
+                            </li>
+                            <li data-target="img-qr">
+                                <img src="assets/images/l2b/icons/icon_codigo-qr.png" alt="Icono 4">
+                                Ingreso con códigos QR
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Imagen del celular SOLO para mobile -->
+                <div class="intro-thumb d-block d-xl-none mt-4">
+                    <div class="phone-images-container">
+                        <img id="img-facial" class="phone-image active" src="assets/images/l2b/Mockup/Reconocimiento facial.png" alt="Facial">
+                        <img id="img-puertas" class="phone-image" src="assets/images/l2b/Mockup/Control de acceso.png" alt="Puertas">
+                        <img id="img-voz" class="phone-image" src="assets/images/l2b/Mockup/Apertura por comando de voz.png" alt="Voz">
+                        <img id="img-qr" class="phone-image" src="assets/images/l2b/Mockup/QR (1).png" alt="QR">
+                    </div>
+                </div>
+
+                <div class="btn-wrapper style1 mt-4">
+                    <a class="theme-btn btn btn-primary" href="#contacto">Conocé Más</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-5 order-2 order-xl-2">
+            <div class="intro-thumb position-relative d-none d-xl-block">
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const items = document.querySelectorAll(".smart-access-list li");
+                        items.forEach((item) => {
+                            item.addEventListener("click", function () {
+                                items.forEach((el) => el.classList.remove("active"));
+                                this.classList.add("active");
+                            });
+                        });
+                    });
+                </script>
+
+                <div class="phone-images-container">
+                    <img id="img-facial" class="phone-image active" src="assets/images/l2b/Mockup/Reconocimiento facial.png" alt="Facial">
+                    <img id="img-puertas" class="phone-image" src="assets/images/l2b/Mockup/Control de acceso.png" alt="Puertas">
+                    <img id="img-voz" class="phone-image" src="assets/images/l2b/Mockup/Apertura por comando de voz.png" alt="Voz">
+                    <img id="img-qr" class="phone-image" src="assets/images/l2b/Mockup/QR (1).png" alt="QR">
+                </div>
+            </div>
+        </div>
+    </div>
